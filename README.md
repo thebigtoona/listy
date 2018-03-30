@@ -2,7 +2,7 @@
 a simple list application made with html, bootstrap & jquery 
 
 ## Installation
-I used an apache server for this.  Place the listy folder in www/htdocs folder 
+Place the listy folder in www/htdocs folder 
 the entire web-app is located in the app folder. 
 
 ## Updates to this version
