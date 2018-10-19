@@ -30,10 +30,10 @@ var Listy = {
     addItem: function (listitem) {
         // template
         let listClass = listitem.trim().split(' ').join('-');
-        let html = `<li class="list-group-item alert">
+        let html = `<li class="">
                         <p class="item-name ${listClass}" >${listitem}</p>
-                        <button style="font-family: sans-serif;" type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span>&times;</span>
                         </button>
                     </li>`;
         window.localStorage.setItem(listitem, html); 
