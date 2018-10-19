@@ -83,7 +83,13 @@ $(document).ready(function()
     $('ul').on('click', '.close', function () {
         var pElement = $(this).parent().find('p').text();  // grab the text from the list item p element
         window.localStorage.removeItem(pElement); // remove the item from localstorage by key above
-        $( this ).alert('close'); // close the item on the gui
+        $(this).css({
+            'display': 'none'
+        });
+        $(this).parent().css({
+            'display': 'none'
+        });
+
     });
 
     // add item by pressing 'Enter'
