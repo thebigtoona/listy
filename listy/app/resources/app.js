@@ -1,5 +1,5 @@
 // name: app.js
-// ver: 1.1.0
+// ver: 1.2.0
 // date: 3/29/18
 // main js file for Listy application 
 
@@ -30,10 +30,10 @@ var Listy = {
     addItem: function (listitem) {
         // template
         let listClass = listitem.trim().split(' ').join('-');
-        let html = `<li class="list-group-item alert">
+        let html = `<li class="">
                         <p class="item-name ${listClass}" >${listitem}</p>
-                        <button style="font-family: sans-serif;" type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span>&times;</span>
                         </button>
                     </li>`;
         window.localStorage.setItem(listitem, html); 
@@ -83,7 +83,13 @@ $(document).ready(function()
     $('ul').on('click', '.close', function () {
         var pElement = $(this).parent().find('p').text();  // grab the text from the list item p element
         window.localStorage.removeItem(pElement); // remove the item from localstorage by key above
-        $( this ).alert('close'); // close the item on the gui
+        $(this).css({
+            'display': 'none'
+        });
+        $(this).parent().css({
+            'display': 'none'
+        });
+
     });
 
     // add item by pressing 'Enter'

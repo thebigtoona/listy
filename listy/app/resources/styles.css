@@ -1,130 +1,56 @@
-:root
+:root 
 {
-    --primary-font-stack: 'Satisfy', cursive;
-    --secondary-font-stack: 'Neucha', cursive;
-    --flower-img: url('./images/sunflower.jpg');
-    --darker-purple: rgb(87, 28, 87);
+    --defaultFontStack: 'Arial', sans-serif;
+    --defaultFontSize: 16px;
+    --thinFontWeight: 400;
+    --lightThemeBg: #fff;
 }
 
-* 
+body,
+html
 {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-body, html
-{
-    background: var(--flower-img);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-
-
-    font-size: 18px;
-    font-weight: 400;
-    font-family: var(--primary-font-stack);
-    line-height: 1.5em;
-}
-
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
-    background-color: rgb(255, 255, 255, .5);
 }
 
-h1, h2, h3 
+body
 {
-    font-family: var(--primary-font-stack);
-    color: purple;
-    margin-bottom: 1em;
-    font-size: 3em;
-    z-index: 100;
-    position: relative;
+    font-family: var(--defaultFontStack);
+    font-size: var(--defaultFontSize);
 }
 
-p
+h1
 {
-    font-size: 1.5em;
-    margin-top: 1em;
+    font-weight: var(--thinFontWeight);
 }
 
-.btn-purple
+input[type="text"],
+button
 {
-    background: purple;
-    color: whitesmoke;
+    padding: .25rem .5rem;
 }
-.btn-purple:hover 
+
+ul
 {
-    background: var(--darker-purple);
-    color: whitesmoke;
+    padding-left: 0;
 }
 
-.close
+li
 {
-    color: purple;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: .3rem;
 }
-.close:hover
+
+li p 
 {
-    color: var(--darker-purple);
+    grid-column: 1/10;
+    grid-row: 1/3;
 }
 
-.top-input
+li button
 {
-    position: relative;
-    z-index: 100;
-}
-
-.card
-{
-    position: relative;
-    z-index: 100;
-}
-
-.card-body
-{
-    padding:0;
-}
-
-.top-input {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-}
-
-input
-{
-    flex: 90%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.form-row button 
-{
-    flex: 10%;
-}
-
-.list-group-item
-{
-    display:flex;
-}
-
-.list-group-item:hover
-{
-    background-color: palegoldenrod;
-}
-
-.list-group-item p {
-    width: 95%;
-    --webkit-user-select:none;
-}
-
-.list-group-item button {
-    width:5%;
+    grid-column: 12;
+    grid-row: 1;
 }
