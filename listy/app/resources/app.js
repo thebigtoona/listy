@@ -1,5 +1,5 @@
 // name: app.js
-// ver: 1.1.0
+// ver: 1.2.0
 // date: 3/29/18
 // main js file for Listy application 
 
